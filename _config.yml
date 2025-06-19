@@ -1,4 +1,4 @@
-# Site Settings
+# GitHub Pages + Minimal Mistakes 호환 설정
 title: "AI 개발자 생존 가이드"
 subtitle: "2023년에 잠들어 2025년에 깨어난 개발자의 AI 생태계 적응기"
 name: "Mi NhanR"
@@ -6,6 +6,9 @@ description: "Vision AI Engineer의 실무 경험과 AI 도구 활용법"
 url: "https://Mi-NhanR.github.io"
 baseurl: ""
 repository: "Mi-NhanR/Mi-NhanR.github.io"
+
+# Remote theme (GitHub Pages 호환)
+remote_theme: "mmistakes/minimal-mistakes@4.24.0"
 
 # Site Author
 author:
@@ -17,30 +20,14 @@ author:
       icon: "fab fa-fw fa-github"
       url: "https://github.com/Mi-NhanR"
 
-# Reading Files
-include:
-  - .htaccess
-  - _pages
-
-# Conversion
+# Build settings
 markdown: kramdown
 highlighter: rouge
-lsi: false
-excerpt_separator: "\n\n"
-incremental: false
+permalink: /:categories/:title/
+paginate: 5
+paginate_path: /page:num/
 
-# Markdown Processing
-kramdown:
-  input: GFM
-  hard_wrap: false
-  auto_ids: true
-  footnote_nr: 1
-  entity_output: as_char
-  toc_levels: 1..6
-  smart_quotes: lsquo,rsquo,ldquo,rdquo
-  enable_coderay: false
-
-# Plugins
+# Plugins (GitHub Pages 허용 목록만)
 plugins:
   - jekyll-paginate
   - jekyll-sitemap
@@ -56,15 +43,8 @@ tag_archive:
   type: liquid
   path: /tags/
 
-# HTML Compression
-compress_html:
-  clippings: all
-  ignore:
-    envs: development
-
 # Defaults
 defaults:
-  # _posts
   - scope:
       path: ""
       type: posts
@@ -72,6 +52,5 @@ defaults:
       layout: single
       author_profile: true
       read_time: true
-      comments: true
       share: true
       related: true
